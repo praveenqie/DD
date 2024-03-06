@@ -4,33 +4,33 @@ import com.example.dd.login.dto.UsersData;
 
 public class SignUpResponse {
 
-    private String accessToken;
+    public UsersData usersData;
 
-    private String refreshToken;
+    public String access_token;
 
-    private UsersData usersData;
-
-    public String getAccessToken() {
-        return accessToken;
-    }
-
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
-    }
-
-    public String getRefreshToken() {
-        return refreshToken;
-    }
-
-    public void setRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
-    }
+    public String refresh_token;
 
     public UsersData getUsersData() {
         return usersData;
     }
 
-    public void setUsersData(UsersData usersData) {
-        this.usersData = usersData;
+    public void setUser(UsersData user) {
+        this.usersData = user;
+    }
+
+    public String getAccess_token() {
+        return access_token;
+    }
+
+    public void setAccess_token(String access_token) {
+        this.access_token = access_token;
+    }
+
+    public String getRefresh_token() {
+        return refresh_token;
+    }
+
+    public void setRefresh_token(String refresh_token) {
+        this.refresh_token = refresh_token;
     }
 }
