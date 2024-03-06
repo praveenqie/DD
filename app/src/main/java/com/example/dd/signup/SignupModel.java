@@ -62,6 +62,7 @@ public class SignupModel {
                 if (response.isSuccessful()) {
                     SignUpResponse signUpResponse = response.body();
                     if (signUpResponse != null) {
+                        onSuccess(signUpResponse);
                         listener.onSuccess();
                     } else {
                         listener.onNetworkFailure("Username/password wrong");
@@ -89,8 +90,8 @@ public class SignupModel {
 
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.COLUMN_EMAIL, signUpResponse.getUsersData().getEmail());
-        values.put(DatabaseHelper.COLUMN_ACCESS_TOKEN,signUpResponse.getAccessToken());
-        values.put(DatabaseHelper.COLUMN_REFRESH_TOKEN,signUpResponse.getRefreshToken());
+        values.put(DatabaseHelper.COLUMN_ACCESS_TOKEN,signUpResponse.getAccess_token());
+        values.put(DatabaseHelper.COLUMN_REFRESH_TOKEN,signUpResponse.getRefresh_token());
         values.put(DatabaseHelper.COLUMN_FIRSTNAME,signUpResponse.getUsersData().getFirstname());
         values.put(DatabaseHelper.COLUMN_LASTNAME,signUpResponse.getUsersData().getLastname());
         long rowId = database.insert(DatabaseHelper.TABLE_CREDENTIALS, null, values);

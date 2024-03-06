@@ -6,8 +6,11 @@
     android:layout_height="60dp"
     android:background="#6741d9">
 
+
+
     <!-- Customize your toolbar content here -->
     <TextView
+        android:id="@+id/navText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Developer Dairy"

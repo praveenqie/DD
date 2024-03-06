@@ -1,6 +1,7 @@
 package com.example.dd.signup;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dd.R;
+import com.example.dd.home.HomeActivity;
+import com.example.dd.login.LoginActivity;
 import com.example.dd.login.dto.UsersData;
 
 public class SignupActivity extends AppCompatActivity implements SignupView {
@@ -19,7 +22,6 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
     private EditText emailEditText;
     private EditText passwordEditText;
     private Button signupButton;
-
     private ProgressDialog progressDialog;
     private SignupPresenter presenter;
 
@@ -72,7 +74,9 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
     public void showSuccess() {
         progressDialog.dismiss();
         Toast.makeText(this, "Signup successful", Toast.LENGTH_SHORT).show();
-        // Navigate to the next activity or perform necessary action
+        Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
