@@ -12,8 +12,8 @@
     <!-- Image View -->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="417dp"
-        android:layout_height="528dp"
+        android:layout_width="415dp"
+        android:layout_height="486dp"
         android:scaleType="fitXY"
         android:src="@drawable/launch_img"
         app:layout_constraintBottom_toTopOf="@id/textView"
