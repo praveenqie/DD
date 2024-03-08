@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dd.R;
 import com.example.dd.home.dto.HistoryItem;
 import com.example.dd.home.dto.HorizontalSpaceItemDecoration;
+import com.example.dd.navigation.BottomNavigationHelper;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,5 +91,8 @@ public class HomeActivity extends AppCompatActivity {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
 //            return insets;
 //        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        BottomNavigationHelper.setupBottomNavigation(this, bottomNavigationView);
     }
 }
